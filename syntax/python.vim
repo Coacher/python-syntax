@@ -16,12 +16,6 @@ endif
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
-" '@' is not allowed to be a part of identifier
-" https://docs.python.org/2/reference/lexical_analysis.html#identifiers
-" https://docs.python.org/3/reference/lexical_analysis.html#identifiers
-let s:save_iskeyword = &iskeyword
-set iskeyword-=@
-
 " Some Python 2 features are not available in Python 3 and vice versa
 " This variable controls whether highlighting should be done in Python 2 style
 let g:python_syntax_prefer_python2 =
@@ -382,9 +376,7 @@ endif
 
 let b:current_syntax = 'python'
 
-let &iskeyword = s:save_iskeyword
 let &cpoptions = s:save_cpo
-unlet! s:save_iskeyword
 unlet! s:save_cpo
 
 " vim:set ts=4 sts=0 noet sw=4 ff=unix:
