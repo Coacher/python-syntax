@@ -228,9 +228,8 @@ syn keyword pythonBuiltinFunction	sorted staticmethod sum super type
 syn keyword pythonBuiltinFunction	vars zip __import__
 
 if g:python_syntax_prefer_python2
-	syn keyword pythonBuiltinFunction	basestring cmp execfile
-	syn keyword pythonBuiltinFunction	range raw_input reduce reload
-	syn keyword pythonBuiltinFunction	unichr
+	syn keyword pythonBuiltinFunction	basestring cmp execfile range
+	syn keyword pythonBuiltinFunction	raw_input reduce reload unichr
 	" Python 2 non-essential built-in functions
 	" https://docs.python.org/2/library/functions.html#non-essential-built-in-functions
 	syn keyword pythonBuiltinFunction	apply coerce intern
