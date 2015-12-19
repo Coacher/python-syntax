@@ -57,6 +57,7 @@ else
 	syn keyword pythonKeyword	False None True nonlocal
 	" 'async' and 'await' are available since Python 3.5
 	" https://docs.python.org/3/reference/compound_stmts.html#coroutines
+	" https://docs.python.org/3.6/whatsnew/3.6.html#new-keywords
 	syn keyword pythonKeyword	async await
 endif
 
