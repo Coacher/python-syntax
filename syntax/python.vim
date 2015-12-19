@@ -64,8 +64,8 @@ endif
 " Operators
 " https://docs.python.org/2/reference/lexical_analysis.html#operators
 " https://docs.python.org/3/reference/lexical_analysis.html#operators
-syn match pythonOperator display	'[-+*%/><|&^~]'
-syn match pythonOperator display	'\%(\*\*\|//\|<<\|>>\)'
+syn match pythonOperator display	'[*+\-%/<>|&~^]'
+syn match pythonOperator display	'\*\*\|//\|<<\|>>'
 syn match pythonOperator display	'[=!><]='
 
 " '=' surrounded by spaces is treated as the assignment operator
