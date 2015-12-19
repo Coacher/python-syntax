@@ -224,7 +224,7 @@ syn keyword pythonBuiltinFunction	help hex id input isinstance issubclass
 syn keyword pythonBuiltinFunction	iter len locals map max min next oct open
 syn keyword pythonBuiltinFunction	ord pow property repr reversed round
 syn keyword pythonBuiltinFunction	setattr slice sorted staticmethod sum
-syn keyword pythonBuiltinFunction	super type vars zip __import__
+syn keyword pythonBuiltinFunction	super vars zip __import__
 
 if g:python_syntax_prefer_python2
 	syn keyword pythonBuiltinFunction	basestring cmp execfile range
@@ -250,7 +250,7 @@ endif
 " Built-in types
 " https://docs.python.org/2/library/stdtypes.html#built-in-types
 " https://docs.python.org/3/library/stdtypes.html#built-in-types
-syn keyword pythonBuiltinType	object
+syn keyword pythonBuiltinType	object type
 syn keyword pythonBuiltinType	bool int float complex
 syn keyword pythonBuiltinType	str list tuple bytearray memoryview
 syn keyword pythonBuiltinType	set frozenset dict
