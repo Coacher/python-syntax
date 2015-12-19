@@ -216,16 +216,15 @@ syn match pythonDecorator contained display	'\%(@\s*\)\@<=\h\w*\%(\.\h\w*\)*'
 " Built-in functions
 " https://docs.python.org/2/library/functions.html
 " https://docs.python.org/3/library/functions.html
-syn keyword pythonBuiltinFunction	abs all any bin callable chr
-syn keyword pythonBuiltinFunction	classmethod compile delattr dir
-syn keyword pythonBuiltinFunction	divmod enumerate eval filter format
-syn keyword pythonBuiltinFunction	getattr globals hasattr hash help
-syn keyword pythonBuiltinFunction	hex id input isinstance issubclass
-syn keyword pythonBuiltinFunction	iter len locals map max min next
-syn keyword pythonBuiltinFunction	object oct open ord pow property
-syn keyword pythonBuiltinFunction	repr reversed round setattr slice
-syn keyword pythonBuiltinFunction	sorted staticmethod sum super type
-syn keyword pythonBuiltinFunction	vars zip __import__
+syn keyword pythonBuiltinFunction	abs all any bin callable chr classmethod
+syn keyword pythonBuiltinFunction	compile delattr dir divmod enumerate eval
+syn keyword pythonBuiltinFunction	filter format getattr globals hasattr
+syn keyword pythonBuiltinFunction	hash help hex id input isinstance
+syn keyword pythonBuiltinFunction	issubclass iter len locals map max min
+syn keyword pythonBuiltinFunction	next object oct open ord pow property
+syn keyword pythonBuiltinFunction	repr reversed round setattr slice sorted
+syn keyword pythonBuiltinFunction	staticmethod sum super type vars zip
+syn keyword pythonBuiltinFunction	__import__
 
 if g:python_syntax_prefer_python2
 	syn keyword pythonBuiltinFunction	basestring cmp execfile range
