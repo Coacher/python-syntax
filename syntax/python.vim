@@ -357,7 +357,7 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonFloat					Float
 
 	HiLink pythonFunctionName			Function
-	HiLink pythonClassName				Type
+	HiLink pythonClassName				Structure
 	HiLink pythonSpecialArgument		Identifier
 
 	HiLink pythonDecoratorSign			PreProc
@@ -366,7 +366,7 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonBuiltinFunction		Function
 	HiLink pythonBuiltinConstant		Constant
 	HiLink pythonBuiltinType			Type
-	HiLink pythonExceptionClass			Structure
+	HiLink pythonExceptionClass			pythonBuiltinType
 
 	delcommand HiLink
 	unlet! s:did_python_syn_inits
