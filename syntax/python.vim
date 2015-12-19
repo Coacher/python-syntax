@@ -97,7 +97,7 @@ endif
 "
 " https://docs.python.org/2/reference/simple_stmts.html#augmented-assignment-statements
 " https://docs.python.org/3/reference/simple_stmts.html#augmented-assignment-statements
-syn match pythonAugmentedAssignment display	'[-+*/|&^%]='
+syn match pythonAugmentedAssignment display	'[+\-*/|&^%]='
 syn match pythonAugmentedAssignment display	'\%(//\|\*\*\|<<\|>>\)='
 
 if !g:python_syntax_prefer_python2
