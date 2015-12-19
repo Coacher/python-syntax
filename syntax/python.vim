@@ -222,7 +222,7 @@ syn keyword pythonBuiltinFunction	compile delattr dir divmod enumerate eval
 syn keyword pythonBuiltinFunction	filter format getattr globals hasattr
 syn keyword pythonBuiltinFunction	hash help hex id input isinstance
 syn keyword pythonBuiltinFunction	issubclass iter len locals map max min
-syn keyword pythonBuiltinFunction	next object oct open ord pow property
+syn keyword pythonBuiltinFunction	next oct open ord pow property
 syn keyword pythonBuiltinFunction	repr reversed round setattr slice sorted
 syn keyword pythonBuiltinFunction	staticmethod sum super type vars zip
 syn keyword pythonBuiltinFunction	__import__
@@ -251,6 +251,7 @@ endif
 " Built-in types
 " https://docs.python.org/2/library/stdtypes.html#built-in-types
 " https://docs.python.org/3/library/stdtypes.html#built-in-types
+syn keyword pythonBuiltinType	object
 syn keyword pythonBuiltinType	bool int float complex
 syn keyword pythonBuiltinType	str list tuple bytearray memoryview
 syn keyword pythonBuiltinType	set frozenset dict
