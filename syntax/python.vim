@@ -42,8 +42,8 @@ syn match pythonLineJoin display	'\\$'
 syn keyword pythonKeyword	as assert break continue del global
 syn keyword pythonKeyword	lambda pass return with yield
 
-syn keyword pythonKeyword skipwhite nextgroup=pythonFunctionName	def
-syn keyword pythonKeyword skipwhite nextgroup=pythonClassName		class
+syn keyword pythonKeyword nextgroup=pythonFunctionName skipwhite	def
+syn keyword pythonKeyword nextgroup=pythonClassName skipwhite		class
 
 syn keyword pythonConditional		elif else if
 syn keyword pythonExceptionHandler	except finally raise try
@@ -208,7 +208,7 @@ syn keyword pythonSpecialArgument	self cls
 " https://docs.python.org/3/reference/compound_stmts.html#grammar-token-decorator
 "
 " Note: '@' sign and a decorator name on separate lines are not highlighted
-syn match pythonDecoratorSign display skipwhite nextgroup=pythonDecorator
+syn match pythonDecoratorSign display nextgroup=pythonDecorator skipwhite
 	\ '\%(\\\n\)\@8<!\_^\s*\zs@'
 syn match pythonDecorator contained display	'\%(@\s*\)\@<=\h\w*\%(\.\h\w*\)*'
 
