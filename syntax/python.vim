@@ -216,25 +216,25 @@ syn match pythonDecorator contained display	'\%(@\s*\)\@<=\h\w*\%(\.\h\w*\)*'
 " Built-in functions
 " https://docs.python.org/2/library/functions.html
 " https://docs.python.org/3/library/functions.html
-syn keyword pythonBuiltinFunction	abs all any bin bool bytearray callable
-syn keyword pythonBuiltinFunction	chr classmethod compile complex delattr
-syn keyword pythonBuiltinFunction	dict dir divmod enumerate eval filter
-syn keyword pythonBuiltinFunction	float format frozenset getattr globals
-syn keyword pythonBuiltinFunction	hasattr hash help hex id input int
-syn keyword pythonBuiltinFunction	isinstance issubclass iter len list
+syn keyword pythonBuiltinFunction	abs all any bin callable
+syn keyword pythonBuiltinFunction	chr classmethod compile delattr
+syn keyword pythonBuiltinFunction	dir divmod enumerate eval filter
+syn keyword pythonBuiltinFunction	format getattr globals
+syn keyword pythonBuiltinFunction	hasattr hash help hex id input
+syn keyword pythonBuiltinFunction	isinstance issubclass iter len
 syn keyword pythonBuiltinFunction	locals map max memoryview min next
 syn keyword pythonBuiltinFunction	object oct open ord pow property range
-syn keyword pythonBuiltinFunction	repr reversed round set setattr slice
-syn keyword pythonBuiltinFunction	sorted staticmethod str sum super tuple
+syn keyword pythonBuiltinFunction	repr reversed round setattr slice
+syn keyword pythonBuiltinFunction	sorted staticmethod sum super
 syn keyword pythonBuiltinFunction	type vars zip __import__
 
 if g:python_syntax_prefer_python2
 	syn keyword pythonBuiltinFunction	basestring cmp execfile file
-	syn keyword pythonBuiltinFunction	long raw_input reduce reload
-	syn keyword pythonBuiltinFunction	unichr unicode xrange
+	syn keyword pythonBuiltinFunction	raw_input reduce reload
+	syn keyword pythonBuiltinFunction	unichr
 	" Python 2 non-essential built-in functions
 	" https://docs.python.org/2/library/functions.html#non-essential-built-in-functions
-	syn keyword pythonBuiltinFunction	apply buffer coerce intern
+	syn keyword pythonBuiltinFunction	apply coerce intern
 else
 	syn keyword pythonBuiltinFunction	ascii bytes exec print
 endif
