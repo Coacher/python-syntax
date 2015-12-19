@@ -82,7 +82,7 @@ endif
 " Delimiters
 " https://docs.python.org/2/reference/lexical_analysis.html#delimiters
 " https://docs.python.org/3/reference/lexical_analysis.html#delimiters
-syn match pythonDelimiter display	'[.():,[\]{};]'
+syn match pythonDelimiter display	'[().,:[\]{};]'
 
 if g:python_syntax_prefer_python2
 	syn match pythonDelimiter display	'[@`]'
