@@ -234,7 +234,7 @@ if g:python_syntax_prefer_python2
 	" https://docs.python.org/2/library/functions.html#non-essential-built-in-functions
 	syn keyword pythonBuiltinFunction	apply coerce intern
 else
-	syn keyword pythonBuiltinFunction	ascii bytes exec print
+	syn keyword pythonBuiltinFunction	ascii exec print
 endif
 
 
@@ -258,7 +258,7 @@ syn keyword pythonBuiltinType	set frozenset dict
 if g:python_syntax_prefer_python2
 	syn keyword pythonBuiltinType	file long unicode buffer xrange
 else
-	syn keyword pythonBuiltinType	range
+	syn keyword pythonBuiltinType	bytes range
 endif
 
 
