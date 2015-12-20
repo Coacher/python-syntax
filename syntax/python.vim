@@ -265,44 +265,44 @@ endif
 " Built-in exceptions
 " https://docs.python.org/2/library/exceptions.html
 " https://docs.python.org/3/library/exceptions.html
-syn keyword pythonExceptionClass	BaseException Exception
-syn keyword pythonExceptionClass	ArithmeticError BufferError LookupError
+syn keyword pythonBuiltinException	BaseException Exception
+syn keyword pythonBuiltinException	ArithmeticError BufferError LookupError
 
-syn keyword pythonExceptionClass	AssertionError AttributeError EOFError
-syn keyword pythonExceptionClass	FloatingPointError GeneratorExit
-syn keyword pythonExceptionClass	ImportError IndentationError IndexError
-syn keyword pythonExceptionClass	KeyError KeyboardInterrupt MemoryError
-syn keyword pythonExceptionClass	NameError NotImplementedError OSError
-syn keyword pythonExceptionClass	OverflowError ReferenceError
-syn keyword pythonExceptionClass	RuntimeError StopIteration SyntaxError
-syn keyword pythonExceptionClass	SystemError SystemExit TabError
-syn keyword pythonExceptionClass	TypeError UnboundLocalError
-syn keyword pythonExceptionClass	UnicodeDecodeError UnicodeEncodeError
-syn keyword pythonExceptionClass	UnicodeError UnicodeTranslateError
-syn keyword pythonExceptionClass	ValueError ZeroDivisionError
+syn keyword pythonBuiltinException	AssertionError AttributeError EOFError
+syn keyword pythonBuiltinException	FloatingPointError GeneratorExit
+syn keyword pythonBuiltinException	ImportError IndentationError IndexError
+syn keyword pythonBuiltinException	KeyError KeyboardInterrupt MemoryError
+syn keyword pythonBuiltinException	NameError NotImplementedError OSError
+syn keyword pythonBuiltinException	OverflowError ReferenceError
+syn keyword pythonBuiltinException	RuntimeError StopIteration SyntaxError
+syn keyword pythonBuiltinException	SystemError SystemExit TabError
+syn keyword pythonBuiltinException	TypeError UnboundLocalError
+syn keyword pythonBuiltinException	UnicodeDecodeError UnicodeEncodeError
+syn keyword pythonBuiltinException	UnicodeError UnicodeTranslateError
+syn keyword pythonBuiltinException	ValueError ZeroDivisionError
 
-syn keyword pythonExceptionClass	Warning
-syn keyword pythonExceptionClass	BytesWarning DeprecationWarning
-syn keyword pythonExceptionClass	FutureWarning ImportWarning
-syn keyword pythonExceptionClass	PendingDeprecationWarning RuntimeWarning
-syn keyword pythonExceptionClass	SyntaxWarning UnicodeWarning UserWarning
+syn keyword pythonBuiltinException	Warning
+syn keyword pythonBuiltinException	BytesWarning DeprecationWarning
+syn keyword pythonBuiltinException	FutureWarning ImportWarning
+syn keyword pythonBuiltinException	PendingDeprecationWarning RuntimeWarning
+syn keyword pythonBuiltinException	SyntaxWarning UnicodeWarning UserWarning
 
 if g:python_syntax_prefer_python2
-	syn keyword pythonExceptionClass	EnvironmentError IOError StandardError
+	syn keyword pythonBuiltinException	EnvironmentError IOError StandardError
 else
-	syn keyword pythonExceptionClass	BlockingIOError BrokenPipeError
-	syn keyword pythonExceptionClass	ChildProcessError
-	syn keyword pythonExceptionClass	ConnectionAbortedError
-	syn keyword pythonExceptionClass	ConnectionError
-	syn keyword pythonExceptionClass	ConnectionRefusedError
-	syn keyword pythonExceptionClass	ConnectionResetError
-	syn keyword pythonExceptionClass	FileExistsError FileNotFoundError
-	syn keyword pythonExceptionClass	InterruptedError IsADirectoryError
-	syn keyword pythonExceptionClass	NotADirectoryError PermissionError
-	syn keyword pythonExceptionClass	ProcessLookupError RecursionError
-	syn keyword pythonExceptionClass	StopAsyncIteration TimeoutError
+	syn keyword pythonBuiltinException	BlockingIOError BrokenPipeError
+	syn keyword pythonBuiltinException	ChildProcessError
+	syn keyword pythonBuiltinException	ConnectionAbortedError
+	syn keyword pythonBuiltinException	ConnectionError
+	syn keyword pythonBuiltinException	ConnectionRefusedError
+	syn keyword pythonBuiltinException	ConnectionResetError
+	syn keyword pythonBuiltinException	FileExistsError FileNotFoundError
+	syn keyword pythonBuiltinException	InterruptedError IsADirectoryError
+	syn keyword pythonBuiltinException	NotADirectoryError PermissionError
+	syn keyword pythonBuiltinException	ProcessLookupError RecursionError
+	syn keyword pythonBuiltinException	StopAsyncIteration TimeoutError
 
-	syn keyword pythonExceptionClass	ResourceWarning
+	syn keyword pythonBuiltinException	ResourceWarning
 endif
 
 
@@ -366,7 +366,7 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonBuiltinFunction		Function
 	HiLink pythonBuiltinConstant		Constant
 	HiLink pythonBuiltinType			Type
-	HiLink pythonExceptionClass			pythonBuiltinType
+	HiLink pythonBuiltinException		pythonBuiltinType
 
 	delcommand HiLink
 	unlet! s:did_python_syn_inits
