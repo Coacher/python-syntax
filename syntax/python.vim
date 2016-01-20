@@ -25,7 +25,7 @@ let g:python_syntax_prefer_python2 =
 " Comments
 " https://docs.python.org/2/reference/lexical_analysis.html#comments
 " https://docs.python.org/3/reference/lexical_analysis.html#comments
-syn region pythonComment oneline keepend start='#' end='$'
+syn region pythonComment oneline keepend start='#' end='\n'
 	\ contains=pythonTodo,@Spell
 syn keyword pythonTodo contained	BUG FIXME NOTE TODO XXX
 
