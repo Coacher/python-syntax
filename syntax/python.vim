@@ -25,7 +25,7 @@ let g:python_syntax_prefer_python2 =
 " Comments
 " https://docs.python.org/2/reference/lexical_analysis.html#comments
 " https://docs.python.org/3/reference/lexical_analysis.html#comments
-syn region pythonComment oneline keepend start='#' end='\n'
+syn region pythonComment oneline keepend start='#' end='$'
 	\ contains=pythonTodo,@Spell
 syn keyword pythonTodo contained	BUG FIXME NOTE TODO XXX
 
@@ -320,7 +320,7 @@ syn region pythonImport keepend
 
 " Sync at the beginning of a class, function, or method definition
 syn sync maxlines=300
-syn sync match pythonSync grouphere NONE	'\_^\s*\%(def\|class\)\s\+\h\w*'
+syn sync match pythonSync grouphere NONE	'^\s*\%(def\|class\)\s\+\h\w*'
 
 
 if v:version >= 508 || !exists('s:did_python_syn_inits')
