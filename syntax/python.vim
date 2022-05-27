@@ -55,9 +55,6 @@ if g:python_syntax_prefer_python2
 	syn keyword pythonKeyword	exec print
 else
 	syn keyword pythonKeyword	False None True nonlocal
-	" 'async' and 'await' are available since Python 3.5
-	" https://docs.python.org/3/reference/compound_stmts.html#coroutines
-	" https://docs.python.org/3.6/whatsnew/3.6.html#new-keywords
 	syn keyword pythonKeyword	async await
 endif
 
@@ -76,7 +73,7 @@ syn match pythonOperator display	'\s\zs=\ze\s'
 if g:python_syntax_prefer_python2
 	syn match pythonOperator display	'<>'
 else
-	syn match pythonOperator display	'@'
+	syn match pythonOperator display	'@\|:='
 endif
 
 
