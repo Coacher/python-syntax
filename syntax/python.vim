@@ -230,7 +230,7 @@ if g:python_syntax_prefer_python2
 	" https://docs.python.org/2/library/functions.html#non-essential-built-in-functions
 	syn keyword pythonBuiltinFunction	apply coerce intern
 else
-	syn keyword pythonBuiltinFunction	ascii exec print
+	syn keyword pythonBuiltinFunction	aiter anext ascii breakpoint exec print
 endif
 
 
