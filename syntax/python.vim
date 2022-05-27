@@ -119,35 +119,35 @@ syn match pythonUnicodeName contained display	'\\N{\u\+\%( \u\+\)*}'
 
 if g:python_syntax_prefer_python2
 	syn region pythonShortString matchgroup=pythonQuotes
-		\ start=+[bB]\=\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+		\ start=+[bB]\=\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 		\ contains=pythonEscape,@Spell
 	syn region pythonLongString matchgroup=pythonTripleQuotes keepend
 		\ start=+[bB]\=\z('''\|"""\)+ end='\z1'
 		\ contains=pythonEscape,@Spell
 
 	syn region pythonShortString matchgroup=pythonQuotes
-		\ start=+[uU]\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+		\ start=+[uU]\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 		\ contains=pythonEscape,pythonUnicodeEscape,pythonUnicodeName,@Spell
 	syn region pythonLongString matchgroup=pythonTripleQuotes keepend
 		\ start=+[uU]\z('''\|"""\)+ end='\z1'
 		\ contains=pythonEscape,pythonUnicodeEscape,pythonUnicodeName,@Spell
 
 	syn region pythonRawShortString matchgroup=pythonQuotes
-		\ start=+[uU][rR]\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+		\ start=+[uU][rR]\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 		\ contains=pythonUnicodeEscape,@Spell
 	syn region pythonRawLongString matchgroup=pythonTripleQuotes keepend
 		\ start=+[uU][rR]\z('''\|"""\)+ end='\z1'
 		\ contains=pythonUnicodeEscape,@Spell
 else
 	syn region pythonShortString matchgroup=pythonQuotes
-		\ start=+[uUbB]\=\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+		\ start=+[uUbB]\=\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 		\ contains=pythonEscape,pythonUnicodeEscape,pythonUnicodeName,@Spell
 	syn region pythonLongString matchgroup=pythonTripleQuotes keepend
 		\ start=+[uUbB]\=\z('''\|"""\)+ end='\z1'
 		\ contains=pythonEscape,pythonUnicodeEscape,pythonUnicodeName,@Spell
 
 	syn region pythonRawShortString matchgroup=pythonQuotes
-		\ start=+[rR][bB]\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+		\ start=+[rR][bB]\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 		\ contains=@Spell
 	syn region pythonRawLongString matchgroup=pythonTripleQuotes keepend
 		\ start=+[rR][bB]\z('''\|"""\)+ end='\z1'
@@ -155,7 +155,7 @@ else
 endif
 
 syn region pythonRawShortString matchgroup=pythonQuotes
-	\ start=+[bB]\=[rR]\z(['"]\)+ skip='\\[\\\_$\z1]' end='\z1'
+	\ start=+[bB]\=[rR]\z(['"]\)+ skip='\\\_[\\\z1]' end='\z1'
 	\ contains=@Spell
 syn region pythonRawLongString matchgroup=pythonTripleQuotes keepend
 	\ start=+[bB]\=[rR]\z('''\|"""\)+ end='\z1'
