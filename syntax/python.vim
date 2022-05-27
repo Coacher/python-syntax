@@ -289,17 +289,17 @@ if g:python_syntax_prefer_python2
 else
 	syn keyword pythonBuiltinException	BlockingIOError BrokenPipeError
 	syn keyword pythonBuiltinException	ChildProcessError
-	syn keyword pythonBuiltinException	ConnectionAbortedError
-	syn keyword pythonBuiltinException	ConnectionError
+	syn keyword pythonBuiltinException	ConnectionAbortedError ConnectionError
 	syn keyword pythonBuiltinException	ConnectionRefusedError
 	syn keyword pythonBuiltinException	ConnectionResetError
 	syn keyword pythonBuiltinException	FileExistsError FileNotFoundError
 	syn keyword pythonBuiltinException	InterruptedError IsADirectoryError
-	syn keyword pythonBuiltinException	NotADirectoryError PermissionError
-	syn keyword pythonBuiltinException	ProcessLookupError RecursionError
-	syn keyword pythonBuiltinException	StopAsyncIteration TimeoutError
+	syn keyword pythonBuiltinException	ModuleNotFoundError NotADirectoryError
+	syn keyword pythonBuiltinException	PermissionError ProcessLookupError
+	syn keyword pythonBuiltinException	RecursionError StopAsyncIteration
+	syn keyword pythonBuiltinException	TimeoutError
 
-	syn keyword pythonBuiltinException	ResourceWarning
+	syn keyword pythonBuiltinException	EncodingWarning ResourceWarning
 endif
 
 
