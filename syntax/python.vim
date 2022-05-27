@@ -47,7 +47,7 @@ syn keyword pythonKeyword nextgroup=pythonClassName skipwhite		class
 
 syn keyword pythonConditional		elif else if
 syn keyword pythonExceptionHandler	except finally raise try
-syn keyword pythonInclude			from import
+syn keyword pythonInclude			from import contained
 syn keyword pythonOperator			and in is not or
 syn keyword pythonRepeat			for while
 
@@ -303,6 +303,21 @@ else
 endif
 
 
+" Attribute references
+" https://docs.python.org/2/reference/expressions.html#grammar-token-attributeref
+" https://docs.python.org/3/reference/expressions.html#grammar-token-python-grammar-attributeref
+syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
+	\ contains=pythonDelimiter
+
+
+" Import statements
+" https://docs.python.org/2/reference/simple_stmts.html#the-import-statement
+" https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
+syn region pythonImport keepend
+	\ start='^\s*\%(from\|import\)\s\+' skip='\\$' end='$'
+	\ contains=pythonInclude,pythonDelimiter,pythonKeyword
+
+
 " Sync at the beginning of a class, function, or method definition
 syn sync maxlines=300
 syn sync match pythonSync grouphere NONE	'\_^\s*\%(def\|class\)\s\+\h\w*'
@@ -326,6 +341,7 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonConditional			Conditional
 	HiLink pythonExceptionHandler		Exception
 	HiLink pythonInclude				Include
+	HiLink pythonImport					Title
 	HiLink pythonOperator				Operator
 	HiLink pythonRepeat					Repeat
 
