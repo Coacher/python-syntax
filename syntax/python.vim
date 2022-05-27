@@ -62,13 +62,9 @@ endif
 " Operators
 " https://docs.python.org/2/reference/lexical_analysis.html#operators
 " https://docs.python.org/3/reference/lexical_analysis.html#operators
-syn match pythonOperator display	'[*+\-%/<>|&~^]'
+syn match pythonOperator display	'[=*+\-%/<>|&~^]'
 syn match pythonOperator display	'\*\*\|//\|<<\|>>'
 syn match pythonOperator display	'[=!><]='
-
-" '=' surrounded by spaces is treated as the assignment operator
-" https://www.python.org/dev/peps/pep-0008/#other-recommendations
-syn match pythonOperator display	'\s\zs=\ze\s'
 
 if g:python_syntax_prefer_python2
 	syn match pythonOperator display	'<>'
