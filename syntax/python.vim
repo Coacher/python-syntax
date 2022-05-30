@@ -311,7 +311,7 @@ syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
 " https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 syn region pythonImport keepend
 	\ start='^\s*\%(from\|import\)\s\+' skip='\\$' end='$'
-	\ contains=pythonInclude,pythonDelimiter,pythonKeyword
+	\ contains=pythonInclude,pythonDelimiter,pythonKeyword,pythonLineJoin
 
 
 " Sync at the beginning of a class, function, or method definition
