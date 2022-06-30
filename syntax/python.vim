@@ -40,7 +40,7 @@ syn match pythonLineJoin display	'\\$'
 " https://docs.python.org/2/reference/lexical_analysis.html#keywords
 " https://docs.python.org/3/reference/lexical_analysis.html#keywords
 syn keyword pythonKeyword	as assert break continue del global
-syn keyword pythonKeyword	lambda pass return with yield
+syn keyword pythonKeyword	lambda pass return with
 
 syn keyword pythonKeyword nextgroup=pythonFunctionName skipwhite	def
 syn keyword pythonKeyword nextgroup=pythonClassName skipwhite		class
@@ -53,9 +53,11 @@ syn keyword pythonRepeat			for while
 
 if g:python_syntax_prefer_python2
 	syn keyword pythonKeyword	exec print
+	syn keyword pythonKeyword	yield
 else
 	syn keyword pythonKeyword	False None True nonlocal
 	syn keyword pythonKeyword	async await
+	syn keyword pythonKeyword	yield from contained
 endif
 
 
@@ -312,6 +314,14 @@ syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
 syn region pythonImport keepend
 	\ start='^\s*\%(from\|import\)\s\+' skip='\\$' end='$'
 	\ contains=pythonInclude,pythonDelimiter,pythonKeyword,pythonLineJoin
+
+
+" Yield expressions
+" https://docs.python.org/3/reference/expressions.html#yieldexpr
+if !g:python_syntax_prefer_python2
+	syn match pythonYield display	'\<yield\>\%(\s\+from\>\)\?'
+		\ contains=pythonKeyword
+endif
 
 
 " Sync at the beginning of a class, function, or method definition
