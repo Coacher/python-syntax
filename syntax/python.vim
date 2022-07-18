@@ -312,8 +312,8 @@ syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
 " https://docs.python.org/2/reference/simple_stmts.html#the-import-statement
 " https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 syn region pythonImport keepend
-	\ start='^\s*\%(from\|import\)\s\+' skip='\\$' end='$'
-	\ contains=pythonInclude,pythonDelimiter,pythonKeyword,pythonLineJoin
+	\ start='^\s*\%(from\|import\)\s\+' skip='\\$\|#.*' end='$'
+	\ contains=pythonInclude,pythonDelimiter,pythonKeyword,pythonLineJoin,pythonComment
 
 
 " Yield expressions
