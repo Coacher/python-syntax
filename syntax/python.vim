@@ -58,6 +58,7 @@ else
 	syn keyword pythonSingleton		False True None
 	syn keyword pythonKeyword		async await nonlocal
 	syn keyword pythonKeyword		yield from contained
+	syn keyword pythonConditional	match case contained
 endif
 
 
@@ -322,6 +323,16 @@ syn region pythonImport keepend
 if !g:python_syntax_prefer_python2
 	syn match pythonYield display	'\<yield\%(\s\+from\)\?\>'
 		\ contains=pythonKeyword
+endif
+
+
+" match/case statements
+" https://docs.python.org/3/reference/compound_stmts.html#the-match-statement
+if !g:python_syntax_prefer_python2
+	" Note: 'match' soft keyword and ':' on separate lines are not highlighted
+	" Note: the above note also applies to 'case' soft keyword and ':'
+	syn match pythonMatching	'^\s*\%(match\|\s\+case\)\s.\{-}:\s*\%(#.*\)\?$'
+		\ contains=ALL
 endif
 
 
