@@ -320,7 +320,7 @@ syn region pythonImport keepend
 " Yield expressions
 " https://docs.python.org/3/reference/expressions.html#yieldexpr
 if !g:python_syntax_prefer_python2
-	syn match pythonYield display	'\<yield\>\%(\s\+from\>\)\?'
+	syn match pythonYield display	'\<yield\%(\s\+from\)\?\>'
 		\ contains=pythonKeyword
 endif
 
