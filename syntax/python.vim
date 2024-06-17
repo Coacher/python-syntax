@@ -55,9 +55,9 @@ if g:python_syntax_prefer_python2
 	syn keyword pythonKeyword	exec print
 	syn keyword pythonKeyword	yield
 else
-	syn keyword pythonKeyword	False None True nonlocal
-	syn keyword pythonKeyword	async await
-	syn keyword pythonKeyword	yield from contained
+	syn keyword pythonSingleton		False True None
+	syn keyword pythonKeyword		async await nonlocal
+	syn keyword pythonKeyword		yield from contained
 endif
 
 
@@ -238,7 +238,7 @@ endif
 syn keyword pythonBuiltinConstant	NotImplemented Ellipsis __debug__
 
 if g:python_syntax_prefer_python2
-	syn keyword pythonBuiltinConstant	False True None
+	syn keyword pythonSingleton	False True None
 endif
 
 
@@ -351,6 +351,7 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonImport					Title
 	HiLink pythonOperator				Operator
 	HiLink pythonRepeat					Repeat
+	HiLink pythonSingleton				Boolean
 
 	HiLink pythonDelimiter				Delimiter
 
