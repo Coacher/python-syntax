@@ -47,7 +47,7 @@ syn keyword pythonKeyword nextgroup=pythonClassName skipwhite		class
 
 syn keyword pythonConditional		elif else if
 syn keyword pythonExceptionHandler	except finally raise try
-syn keyword pythonInclude			from import contained
+syn keyword pythonInclude			as from import contained
 syn keyword pythonOperator			and in is not or
 syn keyword pythonRepeat			for while
 
@@ -313,9 +313,11 @@ syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
 " https://docs.python.org/2/reference/simple_stmts.html#the-import-statement
 " https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 syn region pythonImport keepend
-	\ start='^\s*\<\%(from\|import\)\>' skip='\\$' end='$'
-	\ contains=pythonInclude,pythonDelimiter,pythonKeyword,
-		\ pythonLineJoin,pythonComment
+	\ start='^\s*\<\%(from\|import\)\>' skip='\\$' end='\%(#.*\)\?$'
+	\ contains=pythonInclude,pythonDelimiter,pythonLineJoin,pythonComment
+syn region pythonLongImport keepend
+	\ start='^\s*\<from\>.\{-1,}\<import\>\s\+(' end=')\s*\%(#.*\)\?$'
+	\ contains=pythonInclude,pythonDelimiter,pythonLineJoin,pythonComment
 
 
 " Yield expressions
@@ -361,7 +363,6 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonConditional			Conditional
 	HiLink pythonExceptionHandler		Exception
 	HiLink pythonInclude				Include
-	HiLink pythonImport					Title
 	HiLink pythonOperator				Operator
 	HiLink pythonRepeat					Repeat
 	HiLink pythonSingleton				Boolean
@@ -401,6 +402,9 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonBuiltinConstant		Constant
 	HiLink pythonBuiltinType			Type
 	HiLink pythonBuiltinException		pythonBuiltinType
+
+	HiLink pythonImport					Typedef
+	HiLink pythonLongImport				pythonImport
 
 	delcommand HiLink
 	unlet! s:did_python_syn_inits
