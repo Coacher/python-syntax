@@ -326,12 +326,12 @@ if !g:python_syntax_prefer_python2
 endif
 
 
-" match/case statements
+" Match statements
 " https://docs.python.org/3/reference/compound_stmts.html#the-match-statement
 if !g:python_syntax_prefer_python2
 	" Note: 'match' soft keyword and ':' on separate lines are not highlighted
 	" Note: the above note also applies to 'case' soft keyword and ':'
-	syn match pythonMatching	'^\s*\%(match\|\s\+case\)\s.\{-}:\s*\%(#.*\)\?$'
+	syn match pythonMatch	'^\s*\%(match\|\s\+case\)\s\+.\{-}:\s*\%(#.*\)\?$'
 		\ contains=ALL
 endif
 
