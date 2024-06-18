@@ -52,13 +52,13 @@ syn keyword pythonOperator			and in is not or
 syn keyword pythonRepeat			for while
 
 if g:python_syntax_prefer_python2
-	syn keyword pythonKeyword	exec print
-	syn keyword pythonKeyword	yield
+	syn keyword pythonKeyword		exec print
+	syn keyword pythonYieldKeyword	yield
 else
 	syn keyword pythonSingleton		False True None
 	syn keyword pythonKeyword		async await nonlocal
-	syn keyword pythonKeyword		yield from contained
-	syn keyword pythonConditional	match case contained
+	syn keyword pythonYieldKeyword	yield from contained
+	syn keyword pythonMatchKeyword	match case contained
 endif
 
 
@@ -322,7 +322,7 @@ syn region pythonImport keepend
 " https://docs.python.org/3/reference/expressions.html#yieldexpr
 if !g:python_syntax_prefer_python2
 	syn match pythonYield display	'\<yield\%(\s\+from\)\?\>'
-		\ contains=pythonKeyword
+		\ contains=pythonYieldKeyword
 endif
 
 
@@ -355,6 +355,8 @@ if v:version >= 508 || !exists('s:did_python_syn_inits')
 	HiLink pythonLineJoin				Delimiter
 
 	HiLink pythonKeyword				Statement
+	HiLink pythonYieldKeyword			Statement
+	HiLink pythonMatchKeyword			Conditional
 
 	HiLink pythonConditional			Conditional
 	HiLink pythonExceptionHandler		Exception
