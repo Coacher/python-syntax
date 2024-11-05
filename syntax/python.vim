@@ -196,7 +196,7 @@ syn match pythonFunctionName contained display	'\%(def\s\+\)\@<=\h\w*'
 syn match pythonClassName contained display		'\%(class\s\+\)\@<=\h\w*'
 
 " 'self'/'cls' should be used as the first argument to instance/class methods
-" https://www.python.org/dev/peps/pep-0008/#function-and-method-arguments
+" https://peps.python.org/pep-0008/#function-and-method-arguments
 syn keyword pythonSpecialArgument	self cls
 
 
