@@ -339,7 +339,7 @@ endif
 
 
 " Sync at the beginning of a class, function, or method definition
-syn sync maxlines=300
+syn sync maxlines=500
 syn sync match pythonSync grouphere NONE	'^\s*\%(def\|class\)\s\+\h\w*'
 
 
