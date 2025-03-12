@@ -12,14 +12,13 @@ elseif exists('b:current_syntax')
 	finish
 endif
 
-
 let s:save_cpo = &cpoptions
 set cpoptions&vim
 
+
 " Some Python 2 features are not available in Python 3 and vice versa
 " This variable controls whether highlighting should be done in Python 2 style
-let g:python_syntax_prefer_python2 =
-	\ get(g:, 'python_syntax_prefer_python2', 0)
+let g:python_syntax_prefer_python2 = get(g:, 'python_syntax_prefer_python2', 0)
 
 
 " Comments
