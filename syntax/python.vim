@@ -322,7 +322,7 @@ syn region pythonLongImport keepend
 " Yield expressions
 " https://docs.python.org/3/reference/expressions.html#yieldexpr
 if !g:python_syntax_prefer_python2
-	syn match pythonYield display	'\<yield\%(\s\+from\)\?\>'
+	syn match pythonYield display	'\<yield\%(\s\+from\)\=\>'
 		\ contains=pythonYieldKeyword
 endif
 
@@ -332,7 +332,7 @@ endif
 if !g:python_syntax_prefer_python2
 	" Note: 'match' soft keyword and ':' on separate lines are not highlighted
 	" Note: the above note also applies to 'case' soft keyword and ':'
-	syn match pythonMatch	'^\s*\%(match\|\s\+case\)\s\+.\{-}:\s*\%(#.*\)\?$'
+	syn match pythonMatch	'^\s*\%(match\|\s\+case\)\s\+.\{-}:\s*\%(#.*\)\=$'
 		\ contains=ALL
 endif
 
