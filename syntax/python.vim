@@ -312,10 +312,10 @@ syn match pythonAttributeReference display	'\%(\s*\.\s*\h\w*\)\+'
 " https://docs.python.org/2/reference/simple_stmts.html#the-import-statement
 " https://docs.python.org/3/reference/simple_stmts.html#the-import-statement
 syn region pythonImport keepend
-	\ start='^\s*\<\%(from\|import\)\>' skip='\\$' end='\%(#.*\)\?$'
+	\ start='^\s*\%(from\|import\)\>' skip='\\$' end='\%(#.*\)\=$'
 	\ contains=pythonInclude,pythonDelimiter,pythonLineJoin,pythonComment
 syn region pythonLongImport keepend
-	\ start='^\s*\<from\>.\{-1,}\<import\>\s\+(' end=')\s*\%(#.*\)\?$'
+	\ start='^\s*from\>.\{-1,}\<import\s\+(' end=')\s*\%(#.*\)\=$'
 	\ contains=pythonInclude,pythonDelimiter,pythonLineJoin,pythonComment
 
 
