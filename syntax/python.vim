@@ -4,11 +4,7 @@
 " Originated from the Python syntax file shipped with Vim
 
 
-" For version 5.x: Clear all syntax items
-" For version 6.x: Quit when a syntax file was already loaded
-if v:version < 600
-	syn clear
-elseif exists('b:current_syntax')
+if exists('b:current_syntax')
 	finish
 endif
 
@@ -342,72 +338,63 @@ syn sync maxlines=500
 syn sync match pythonSync grouphere NONE	'^\s*\%(def\|class\)\s\+\h\w*'
 
 
-if v:version >= 508 || !exists('s:did_python_syn_inits')
-	if v:version <= 508
-		let s:did_python_syn_inits = 1
-		command -nargs=+ HiLink hi link <args>
-	else
-		command -nargs=+ HiLink hi def link <args>
-	endif
+command -nargs=+ HiLink hi def link <args>
+HiLink pythonComment				Comment
+HiLink pythonTodo					Todo
 
-	HiLink pythonComment				Comment
-	HiLink pythonTodo					Todo
+HiLink pythonLineJoin				Delimiter
 
-	HiLink pythonLineJoin				Delimiter
+HiLink pythonKeyword				Statement
+HiLink pythonYieldKeyword			Statement
+HiLink pythonMatchKeyword			Conditional
 
-	HiLink pythonKeyword				Statement
-	HiLink pythonYieldKeyword			Statement
-	HiLink pythonMatchKeyword			Conditional
+HiLink pythonConditional			Conditional
+HiLink pythonExceptionHandler		Exception
+HiLink pythonInclude				Include
+HiLink pythonOperator				Operator
+HiLink pythonRepeat					Repeat
+HiLink pythonSingleton				Boolean
 
-	HiLink pythonConditional			Conditional
-	HiLink pythonExceptionHandler		Exception
-	HiLink pythonInclude				Include
-	HiLink pythonOperator				Operator
-	HiLink pythonRepeat					Repeat
-	HiLink pythonSingleton				Boolean
+HiLink pythonDelimiter				Delimiter
 
-	HiLink pythonDelimiter				Delimiter
+HiLink pythonAugmentedAssignment	pythonOperator
 
-	HiLink pythonAugmentedAssignment	pythonOperator
+HiLink pythonEscape					SpecialChar
+HiLink pythonUnicodeEscape			SpecialChar
+HiLink pythonUnicodeName			pythonUnicodeEscape
 
-	HiLink pythonEscape					SpecialChar
-	HiLink pythonUnicodeEscape			SpecialChar
-	HiLink pythonUnicodeName			pythonUnicodeEscape
+HiLink pythonQuotes					Special
+HiLink pythonTripleQuotes			pythonQuotes
 
-	HiLink pythonQuotes					Special
-	HiLink pythonTripleQuotes			pythonQuotes
+HiLink pythonShortString			String
+HiLink pythonLongString				String
+HiLink pythonRawShortString			String
+HiLink pythonRawLongString			String
 
-	HiLink pythonShortString			String
-	HiLink pythonLongString				String
-	HiLink pythonRawShortString			String
-	HiLink pythonRawLongString			String
+HiLink pythonDecInteger				Number
+HiLink pythonOctInteger				Number
+HiLink pythonHexInteger				Number
+HiLink pythonBinInteger				Number
+HiLink pythonImgInteger				Number
 
-	HiLink pythonDecInteger				Number
-	HiLink pythonOctInteger				Number
-	HiLink pythonHexInteger				Number
-	HiLink pythonBinInteger				Number
-	HiLink pythonImgInteger				Number
+HiLink pythonFloat					Float
 
-	HiLink pythonFloat					Float
+HiLink pythonFunctionName			Function
+HiLink pythonClassName				Structure
+HiLink pythonSpecialArgument		Identifier
 
-	HiLink pythonFunctionName			Function
-	HiLink pythonClassName				Structure
-	HiLink pythonSpecialArgument		Identifier
+HiLink pythonDecoratorSign			PreProc
+HiLink pythonDecorator				Macro
 
-	HiLink pythonDecoratorSign			PreProc
-	HiLink pythonDecorator				Macro
+HiLink pythonBuiltinFunction		Function
+HiLink pythonBuiltinConstant		Constant
+HiLink pythonBuiltinType			Type
+HiLink pythonBuiltinException		pythonBuiltinType
 
-	HiLink pythonBuiltinFunction		Function
-	HiLink pythonBuiltinConstant		Constant
-	HiLink pythonBuiltinType			Type
-	HiLink pythonBuiltinException		pythonBuiltinType
+HiLink pythonImport					Typedef
+HiLink pythonLongImport				pythonImport
+delcommand HiLink
 
-	HiLink pythonImport					Typedef
-	HiLink pythonLongImport				pythonImport
-
-	delcommand HiLink
-	unlet! s:did_python_syn_inits
-endif
 
 let b:current_syntax = 'python'
 
